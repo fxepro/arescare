@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   BASE LAYER — element defaults wired to tokens. No page touches these.
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-blush-50 font-sans text-ink-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-medium text-ink-900;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-navy-900;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-blush-50;
+  }
+}
+
+/* ============================================================================
+   COMPONENT LAYER — reusable building blocks. Restyle the whole site here,
+   never on a page. Pages reference these class names only.
+   ========================================================================== */
+@layer components {
+  /* --- Layout rhythm --- */
+  .section {
+    @apply py-16 lg:py-24;
+  }
+
+  /* --- Eyebrow (section label) --- */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-brand-700;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-6 bg-brand-500;
+  }
+  .eyebrow-light {
+    @apply text-brand-200;
+  }
+  .eyebrow-light::before {
+    @apply bg-brand-300;
+  }
+
+  /* --- Buttons --- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply bg-brand-600 text-white shadow-soft hover:-translate-y-0.5 hover:bg-brand-700;
+  }
+  .btn-accent {
+    @apply bg-accent-500 text-accent-950 shadow-soft hover:-translate-y-0.5 hover:bg-accent-600 hover:text-white;
+  }
+  .btn-ghost {
+    @apply border border-ink-200 bg-transparent text-ink-800 hover:border-ink-300 hover:bg-ink-50;
+  }
+  .btn-light {
+    @apply bg-white text-navy-900 shadow-soft hover:-translate-y-0.5 hover:bg-blush-50;
+  }
+  .btn-dark {
+    @apply bg-navy-900 text-white hover:-translate-y-0.5 hover:bg-navy-950;
+  }
+
+  /* --- Cards --- */
+  .card {
+    @apply rounded-2.5xl border border-ink-100 bg-white shadow-soft transition-all duration-200;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-lift;
+  }
+
+  /* --- Pills / badges --- */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+  }
+
+  /* --- Surfaces --- */
+  .banner-surface {
+    @apply bg-gradient-to-br from-navy-950 via-navy-900 to-brand-900 text-white;
+  }
+  .banner-surface-light {
+    @apply bg-gradient-to-b from-brand-50 via-blush-50 to-white text-ink-900;
+  }
+
+  /* --- Icon badge (pastel tile behind an icon) --- */
+  .icon-badge {
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl;
+  }
+}
+
+/* ============================================================================
+   UTILITY LAYER
+   ========================================================================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Soft dotted overlay for dark banners */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+}
