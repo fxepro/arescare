@@ -4,7 +4,7 @@ import type { Step } from "@/lib/content";
 /**
  * Numbered "how it works" blocks — one implementation, two tones.
  *   navy  → dark cells, sits on a .banner-surface card
- *   light → white cells on a light section
+ *   light → white cells; accent-200 gutters (mint green grid lines)
  */
 export function StepGrid({
   steps,
@@ -20,7 +20,7 @@ export function StepGrid({
     <div
       className={clsx(
         "grid gap-px overflow-hidden rounded-2xl sm:grid-cols-2 lg:grid-cols-4",
-        dark ? "bg-white/10" : "bg-ink-200",
+        dark ? "bg-white/10" : "bg-accent-200",
         className,
       )}
     >

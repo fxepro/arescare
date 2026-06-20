@@ -29,10 +29,6 @@ export function SiteFooter() {
             chronic care, medication access and more, all in one place.
           </p>
           <div className="mt-6 space-y-3 text-base">
-            <a href={contact.phoneHref} className="flex items-center gap-3 hover:text-white">
-              <Icon name="phone" className="h-4 w-4 text-brand-300" />
-              {contact.phone}
-            </a>
             <a href={contact.emailHref} className="flex items-center gap-3 hover:text-white">
               <Icon name="mail" className="h-4 w-4 text-brand-300" />
               {contact.email}

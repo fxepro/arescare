@@ -14,8 +14,6 @@ export const site = {
 } as const;
 
 export const contact = {
-  phone: "(303) 333-5145",
-  phoneHref: "tel:+13033335145",
   email: "contact@arescare.com",
   emailHref: "mailto:contact@arescare.com",
   address: {

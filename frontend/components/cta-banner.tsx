@@ -22,9 +22,9 @@ export function CtaBanner({
                 Get started
                 <Icon name="arrow" className="h-4 w-4" />
               </Link>
-              <a href={contact.phoneHref} className="btn btn-accent">
-                <Icon name="phone" className="h-4 w-4" />
-                {contact.phone}
+              <a href={contact.emailHref} className="btn btn-accent">
+                <Icon name="mail" className="h-4 w-4" />
+                Email us
               </a>
             </div>
           </div>

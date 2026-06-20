@@ -30,29 +30,45 @@ export function PageBanner({
         <div className="bg-dot-grid absolute inset-0 opacity-60" aria-hidden="true" />
       )}
       <div
-        className="pointer-events-none absolute -right-16 -top-24 h-72 w-72 rounded-full bg-brand-200/40 blur-3xl"
+        className={clsx(
+          "pointer-events-none absolute -right-16 -top-24 h-80 w-80 rounded-full blur-3xl",
+          dark ? "bg-brand-400/25" : "bg-brand-300/45",
+        )}
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -bottom-24 left-10 h-64 w-64 rounded-full bg-accent-200/40 blur-3xl"
+        className={clsx(
+          "pointer-events-none absolute -bottom-20 left-0 h-64 w-64 rounded-full blur-3xl",
+          dark ? "bg-brand-600/20" : "bg-brand-200/35",
+        )}
         aria-hidden="true"
       />
 
       <div className="container relative py-16 lg:py-20">
         {breadcrumbs && (
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-2 text-sm text-ink-500">
+            <ol className="flex flex-wrap items-center gap-2 text-sm">
               {breadcrumbs.map((c, i) => (
                 <li key={c.label} className="flex items-center gap-2">
                   {c.href ? (
-                    <Link href={c.href} className="hover:text-brand-700">
+                    <Link
+                      href={c.href}
+                      className={clsx(
+                        "hover:text-brand-600",
+                        dark ? "text-ink-300" : "text-ink-500",
+                      )}
+                    >
                       {c.label}
                     </Link>
                   ) : (
-                    <span className="text-ink-700">{c.label}</span>
+                    <span className={dark ? "text-white/90" : "text-ink-700"}>
+                      {c.label}
+                    </span>
                   )}
                   {i < breadcrumbs.length - 1 && (
-                    <span className="text-ink-300">/</span>
+                    <span className={dark ? "text-white/30" : "text-ink-300"}>
+                      /
+                    </span>
                   )}
                 </li>
               ))}

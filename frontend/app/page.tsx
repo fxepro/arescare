@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       {/* ---------- Hero ---------- */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50 via-blush-50 to-blush-50" />
+        <div className="hero-surface absolute inset-0 -z-10" />
         <div className="container grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
           <div>
             <span className="eyebrow">Advisory · Technology · Care</span>
